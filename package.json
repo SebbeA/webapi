@@ -2,9 +2,9 @@
   "name": "webapi",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server-api.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon server-api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
