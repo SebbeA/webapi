@@ -1,6 +1,9 @@
 const express = require('express')
 const controller = express.Router()
 
+//* Authorize is not applied for any routes
+const { authorize } = require('../middlewares/authorization')
+
 const productSchema = require('../schemas/productSchema')
 
 // * Unsecured routes
