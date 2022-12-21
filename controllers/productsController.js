@@ -88,7 +88,7 @@ controller.route('/product/details/:articleNumber')
         res.status(404).json()
 })
 
-// * Secured routes
+// * Secured routes, works only with Postman
 controller.route('/')
 .post(authorize, async (req, res) => {
     const { tag, name, description, category, price, rating, imageName } = req.body
