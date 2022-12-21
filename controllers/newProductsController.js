@@ -1,7 +1,7 @@
 const express = require('express')
 const controller = express.Router()
 
-//* Authorize is not applied for any routes
+//* Authorize for secured routes
 const { authorize } = require('../middlewares/authorization')
 
 const productSchema = require('../schemas/productSchema')
@@ -90,7 +90,7 @@ controller.route('/product/details/:articleNumber')
 
 // * Secured routes
 controller.route('/')
-.post(async (req, res) => {
+.post(authorize, async (req, res) => {
     const { tag, name, description, category, price, rating, imageName } = req.body
     if(!name || !price)
         res.status(400).json({text: 'Name and price is required.'})
@@ -116,7 +116,7 @@ controller.route('/')
 
 })
 controller.route('/:articleNumber')
-.put(async (req, res) => {
+.put(authorize, async (req, res) => {
     if (!req.params.articleNumber) {
         res.status(400).json({text: 'No article number was specified.'})
     } else {
@@ -139,7 +139,7 @@ controller.route('/:articleNumber')
     }
 })
 controller.route('/:articleNumber')
-.delete(async (req, res) => {
+.delete(authorize, async (req, res) => {
     if (!req.params.articleNumber)
         res.status(400).json('No article number was specified.')
     else {

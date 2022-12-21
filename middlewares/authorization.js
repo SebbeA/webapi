@@ -9,9 +9,9 @@ const generateAccessToken = (id) => {
 }
 
 const authorize = (req, res, next) => {
-    if (req.headers.authorization && req.headers.authorization.startWith('Bearer')) {
+    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
         try {
-            const accessToken = req.header.authorization.split(' ')[1]
+            const accessToken = req.headers.authorization.split(' ')[1]
             const decodedAccessToken = jwt.verify(accessToken, process.env.JWT_SECRET)
             next()
         } catch {
