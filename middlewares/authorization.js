@@ -1,4 +1,4 @@
-//* Authorize is not applied for any routes
+//* Authorize for secured routes in productsController, works only with Postman
 
 const jwt = require('jsonwebtoken')
 

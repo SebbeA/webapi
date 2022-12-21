@@ -6,7 +6,7 @@ const { generateAccessToken } = require('../middlewares/authorization')
 
 const userSchema = require('../schemas/userSchema')
 
-// Unsecured routes
+//* Unsecured routes, works only with Postman
 
 controller.route('/signup')
 .post(async (req, res) => {

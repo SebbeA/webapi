@@ -4,7 +4,7 @@ const users = [
 ]
 module.exports = users
 
-// * https://win22imgstorage.blob.core.windows.net/images/
+// * Old database
 const products = [
     { tag: "", articleNumber: "cd5d380a-1c95-46ef-964e-290571f92bd5", name: "Black coat", description: "", category: "Coats", price: "131", rating: "5", imageName: "https://win22imgstorage.blob.core.windows.net/images/black-coat.png"},
     { tag: "featured", articleNumber: "a74bdf92-af44-4f4d-92f9-2ff65b2e4701", name: "Black dress", description: "", category: "Dresses", price: "99", rating: "3", imageName: "https://win22imgstorage.blob.core.windows.net/images/black-dress.png"},
