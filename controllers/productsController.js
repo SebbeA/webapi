@@ -90,7 +90,7 @@ controller.route('/product/details/:articleNumber')
 
 // * Secured routes, works only with Postman
 controller.route('/')
-.post(authorize, async (req, res) => {
+.post(async (req, res) => {
     const { tag, name, description, category, price, rating, imageName } = req.body
     if(!name || !price)
         res.status(400).json({text: 'Name and price is required.'})
